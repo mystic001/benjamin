@@ -81,4 +81,4 @@ function factors(n) {
 }
 
 
-palindromeReturn(20, 80)
+palindromeReturn(20, 100)
