@@ -25,9 +25,6 @@ the pairs.
 
 
 
-
-[1, 2, 3, 4, 5]
-
 const palindromeReturn = (numb1, numb2) => {
     const arraya = range(numb1, numb2)
     const palArray = []
@@ -35,15 +32,14 @@ const palindromeReturn = (numb1, numb2) => {
         //This step is for a number to multiply itsef
         const res = Math.pow(arraya[i], 2);
         if (palindrome(res.toString())) {
-            palArray.push(arraya[i])
+            palArray.push(res)
         }
 
         for (let j = i + 1; j <= arraya.length - 1; j++) {
 
             //If the products of two numbers result in a palindrome enter the block of code below 
             if (palindrome((arraya[i] * arraya[j]).toString())) {
-                palArray.push(arraya[i])
-                palArray.push(arraya[j])
+                palArray.push(arraya[i] * arraya[j])
             }
 
         }
@@ -112,4 +108,4 @@ function factors(n) {
 
 
 
-palindromeReturn(10, 99)
+palindromeReturn(1, 11)
