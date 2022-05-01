@@ -1,3 +1,33 @@
+/**
+ * 
+ * 
+ * Detect palindrome products in a given range.
+A palindromic number is a number that
+remains the same when its digits are
+reversed. For example, 121 is a palindromic
+number but 112 is not.
+Given a range of numbers, find the largest
+and smallest palindromes which are products
+of two numbers within that range.
+Your solution should return the largest and
+smallest palindromes, along with the factors
+of each within the range. If the largest or
+smallest palindrome has more than one pair
+of factors within the range, then return all
+the pairs.
+
+ * @param {
+ * 
+ * } numb1 
+ * @param {*} numb2 
+ */
+
+
+
+
+
+[1, 2, 3, 4, 5]
+
 const palindromeReturn = (numb1, numb2) => {
     const arraya = range(numb1, numb2)
     const palArray = []
@@ -21,12 +51,15 @@ const palindromeReturn = (numb1, numb2) => {
     }
 
     const unique = uniqueArray(palArray)
+
+    console.log(unique[unique.length - 1])
     const value = [unique[0], unique[unique.length - 1]]
     console.log("values with palindrome are "+value)
     
     console.log("There products are below")
     for (let i = 0; i < value.length; i++) {
         const arr = factors(value[i])
+
         console.log(sortArray(arr))
     }
 
@@ -65,15 +98,11 @@ function sortArray(arr) {
 
 //Function to get the factors of a number 
 function factors(n) {
-
     var result = [];
 
-    for (var i = 1; i <= Math.sqrt(n); i++) {
+    for (var i = 0; i <= n; i++) {
         if (n % i === 0) {
             result.push(i);
-            if (i !== n / i) {
-                result.push(n / i);
-            }
         }
     }
 
@@ -81,4 +110,6 @@ function factors(n) {
 }
 
 
-palindromeReturn(20, 100)
+
+
+palindromeReturn(10, 99)
